@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -96,6 +96,106 @@
 
     .navbar-nav .nav-link:hover::before {
       width: 100%;
+    }
+
+    /* Mobile Navigation Toggler */
+    .navbar-toggler {
+      border: 2px solid var(--primary-color) !important;
+      background-color: rgba(100, 255, 218, 0.1) !important;
+      padding: 0.5rem 0.75rem !important;
+      border-radius: 6px !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .navbar-toggler:hover {
+      background-color: rgba(100, 255, 218, 0.2) !important;
+      border-color: var(--primary-color) !important;
+      transform: scale(1.05);
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: 0 0 0 0.25rem rgba(100, 255, 218, 0.25) !important;
+      border-color: var(--primary-color) !important;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2364ffda' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+      width: 1.5em !important;
+      height: 1.5em !important;
+    }
+
+    /* Mobile Menu Background */
+    .navbar-collapse {
+      background: var(--card-bg) !important;
+      border-radius: 8px !important;
+      margin-top: 1rem !important;
+      padding: 1rem !important;
+      border: 1px solid var(--border-color) !important;
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar-nav .nav-link {
+        color: var(--text-primary) !important;
+        padding: 0.75rem 1rem !important;
+        border-radius: 4px !important;
+        margin: 0.25rem 0 !important;
+        transition: all 0.3s ease !important;
+      }
+
+      .navbar-nav .nav-link:hover {
+        background-color: rgba(100, 255, 218, 0.1) !important;
+        color: var(--primary-color) !important;
+      }
+    }
+
+    /* Mobile Navigation Toggler */
+    .navbar-toggler {
+      border: 2px solid var(--primary-color) !important;
+      background-color: rgba(100, 255, 218, 0.1) !important;
+      padding: 0.5rem 0.75rem !important;
+      border-radius: 6px !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .navbar-toggler:hover {
+      background-color: rgba(100, 255, 218, 0.2) !important;
+      border-color: var(--primary-color) !important;
+      transform: scale(1.05);
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: 0 0 0 0.25rem rgba(100, 255, 218, 0.25) !important;
+      border-color: var(--primary-color) !important;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2364ffda' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+      width: 1.5em !important;
+      height: 1.5em !important;
+    }
+
+    /* Mobile Menu Background */
+    .navbar-collapse {
+      background: var(--card-bg) !important;
+      border-radius: 8px !important;
+      margin-top: 1rem !important;
+      padding: 1rem !important;
+      border: 1px solid var(--border-color) !important;
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar-nav .nav-link {
+        color: var(--text-primary) !important;
+        padding: 0.75rem 1rem !important;
+        border-radius: 4px !important;
+        margin: 0.25rem 0 !important;
+        transition: all 0.3s ease !important;
+      }
+
+      .navbar-nav .nav-link:hover {
+        background-color: rgba(100, 255, 218, 0.1) !important;
+        color: var(--primary-color) !important;
+      }
     }
 
     .btn-resume {
