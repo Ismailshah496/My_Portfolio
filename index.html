@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Muhammad Ismail Shah</title>
+  <meta content="Software Engineer specializing in building exceptional digital experiences" name="description">
+  <meta content="portfolio, software engineer, web developer, full-stack" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #64ffda;
+      --bg-color: #0a192f;
+      --text-primary: #ccd6f6;
+      --text-secondary: #8892b0;
+      --text-muted: #8892b0;
+      --nav-bg: rgba(10, 25, 47, 0.85);
+      --card-bg: #112240;
+      --border-color: #233554;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    .navbar {
+      background: var(--nav-bg);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar-brand {
+      color: var(--primary-color) !important;
+      font-weight: 700;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--text-primary) !important;
+      font-weight: 500;
+      margin: 0 1rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link::before {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover::before {
+      width: 100%;
+    }
+
+    .btn-resume {
+      border: 1px solid var(--primary-color);
+      color: var(--primary-color);
+      background: transparent;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .btn-resume:hover {
+      background: rgba(100, 255, 218, 0.1);
+      color: var(--primary-color);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px 0;
+    }
+
+    .hero-content h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .hero-content h2 {
+      font-size: 3.5rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .hero-content .greeting {
+      color: var(--primary-color);
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 540px;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .hero-content .highlight {
+      color: var(--primary-color);
+    }
+
+    .btn-primary-custom {
+      border: 1px solid var(--primary-color);
+      color: var(--primary-color);
+      background: transparent;
+      padding: 1rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    .btn-primary-custom:hover {
+      background: rgba(100, 255, 218, 0.1);
+      color: var(--primary-color);
+    }
+
+    /* Sections */
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--primary-color);
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h5 {
+      color: var(--text-primary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .card p, .card li {
+      color: var(--text-secondary);
+    }
+
+    /* Skills */
+    .skill-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .skill-item:hover {
+      border-color: var(--primary-color);
+    }
+
+    .skill-name {
+      color: var(--text-primary);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-description {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* Contact */
+    .contact-info {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item i {
+      color: var(--primary-color);
+      font-size: 1.2rem;
+      margin-right: 1rem;
+      width: 20px;
+    }
+
+    .contact-item a {
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-item a:hover {
+      color: var(--primary-color);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-content h2 {
+        font-size: 2rem;
+      }
+      
+      .section {
+        padding: 60px 0;
+      }
+      
+      .navbar-nav {
+        text-align: center;
+      }
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-color);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4cd6b3;
+    }
+
+    /* Resume Modal Styles */
+    .modal-content {
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-header {
+      padding: 1.5rem;
+    }
+
+    .modal-title {
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+
+    .btn-close-white {
+      filter: invert(1) grayscale(100%) brightness(200%);
+    }
+
+    .resume-container {
+      border-radius: 0 0 12px 12px;
+    }
+
+    .resume-container iframe {
+      border-radius: 0 0 12px 12px;
+    }
+
+    /* Download button hover effect */
+    .modal-header .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(100, 255, 218, 0.3);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <div style="width: 40px; height: 40px; background: var(--primary-color); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--bg-color); font-weight: 700; font-size: 1.2rem;">I</div>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experience">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#certifications">Certifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#leadership">Leadership</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a class="btn-resume" href="Resume.pdf" data-bs-toggle="modal" data-bs-target="#resumeModal">Resume</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <div class="hero-content">
+            <p class="greeting">Hi, my name is</p>
+            <h1>Muhammad Ismail Shah.</h1>
+            <h2>I build things for the web and mobile.</h2>
+            <p>I'm a fresh Computer Science graduate passionate about software development, machine learning, and creating user-friendly applications. I'm eager to learn and grow in the tech industry, combining my academic knowledge with hands-on project experience to build meaningful solutions.</p>
+            <a href="#contact" class="btn-primary-custom">Get In Touch</a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="text-center">
+            <div class="code-editor-preview" style="background: #1e1e1e; border-radius: 8px; padding: 20px; border: 1px solid var(--border-color); max-width: 350px; margin: 0 auto;">
+              <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                <div style="width: 12px; height: 12px; background: #ff5f56; border-radius: 50%; margin-right: 8px;"></div>
+                <div style="width: 12px; height: 12px; background: #ffbd2e; border-radius: 50%; margin-right: 8px;"></div>
+                <div style="width: 12px; height: 12px; background: #27ca3f; border-radius: 50%; margin-right: 15px;"></div>
+                <span style="color: #8892b0; font-size: 0.9rem;">portfolio.html</span>
+              </div>
+              <div style="color: #ccd6f6; font-family: 'Courier New', monospace; font-size: 0.85rem; text-align: left;">
+                <div style="color: #ff79c6;">&lt;div class="developer"&gt;</div>
+                                 <div style="margin-left: 15px; color: #f8f8f2;">
+                   <div style="color: #50fa7b;">name:</div>
+                   <div style="color: #f1fa8c;">"Muhammad Ismail Shah"</div>
+                   <div style="color: #50fa7b;">role:</div>
+                   <div style="color: #f1fa8c;">"Fresh Graduate"</div>
+                   <div style="color: #50fa7b;">interests:</div>
+                   <div style="color: #f1fa8c;">["Web Dev", "Mobile Apps", "AI/ML"]</div>
+                 </div>
+                <div style="color: #ff79c6;">&lt;/div&gt;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="mb-4">
+              <h3 style="color: var(--primary-color); font-size: 1.5rem; margin-bottom: 1rem;">Software Developer / ML Enthusiast / AI Innovator</h3>
+              <p style="color: var(--text-secondary); font-style: italic; margin-bottom: 2rem;">Fresh Graduate</p>
+            </div>
+            
+            <p>I am a Computer Science graduate from the University of Engineering and Technology (UET) Peshawar, with hands-on experience in full-stack mobile app development, machine learning, and intelligent backend systems. My academic and project-based work demonstrates a strong focus on building impactful software solutions that address real-world challenges.</p>
+            
+            <p>I have successfully developed and deployed innovative applications including a cross-platform AI-powered food redistribution app, a legal assistant chatbot based on Pakistan's Constitution, and a machine learning model for customer churn prediction. My technical stack includes Flutter, Firebase, Python, Flask, and scikit-learn, along with strong knowledge of APIs, cloud tools, and data analysis libraries.</p>
+            
+            <p>Passionate about combining AI with user-focused design, I aim to create scalable, smart, and socially beneficial technology.</p>
+            
+            <div class="mt-4">
+              <h4 style="color: var(--text-primary); margin-bottom: 1rem;">Technologies I've been working with recently:</h4>
+              <div class="row">
+                <div class="col-md-6">
+                  <ul>
+                    <li>JavaScript (ES6+)</li>
+                    <li>React & Node.js</li>
+                    <li>Python & Flask</li>
+                    <li>Flutter & Firebase</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul>
+                    <li>MongoDB & MySQL</li>
+                    <li>Machine Learning</li>
+                    <li>scikit-learn</li>
+                    <li>APIs & Cloud Tools</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="text-center">
+            <img src="assets/img/ismail.jpeg" alt="Ismail Shah" class="img-fluid rounded" style="max-width: 300px; border: 2px solid var(--primary-color);">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <h5>Bachelor of Computer Science <span style="color: var(--primary-color);">(Nov 2021 - July 2025)</span></h5>
+            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Institution:</strong> University of Engineering and Technology, Peshawar</p>
+            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>City:</strong> Peshawar</p>
+            <p style="color: var(--text-secondary); margin-bottom: 0;">Currently pursuing my degree with focus on software development, machine learning, and computer science fundamentals.</p>
+          </div>
+          
+          <div class="card">
+            <h5>Intermediate (FSc Pre-Engineering) <span style="color: var(--primary-color);">(2019 - 2021)</span></h5>
+            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Institution:</strong> Leeds School and College</p>
+            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>City:</strong> Dera Ismail Khan</p>
+            <p style="color: var(--text-secondary); margin-bottom: 0;">Completed pre-engineering studies with strong foundation in mathematics and sciences.</p>
+          </div>
+          
+          <div class="card">
+            <h5>Matriculation (Science) <span style="color: var(--primary-color);">(2017 - 2019)</span></h5>
+            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Institution:</strong> Wensam School and College, Dera Ismail Khan</p>
+            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>City:</strong> Dera Ismail Khan</p>
+            <p style="color: var(--text-secondary); margin-bottom: 0;">Completed secondary education with science group, building strong academic foundation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section-title">Where I've Worked</h2>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <h5>Zero Hunger – Food Redistribution App <span style="color: var(--primary-color);">(01/2025 – 07/2025)</span></h5>
+            <ul>
+              <li>Developed a cross-platform app to connect food donors, recipients, and volunteers in real-time.</li>
+              <li>Integrated Firebase for authentication, database, and storage, with Google Maps for location tracking.</li>
+              <li>Built features like donation posting, campaign creation, volunteer tracking, and AI-based delivery routing.</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h5>Customer Churn Prediction – Machine Learning Model <span style="color: var(--primary-color);">(11/2024 – 12/2025)</span></h5>
+            <ul>
+              <li>Built a supervised ML model to predict customer churn using real-world customer behavior and usage data.</li>
+              <li>Performed data preprocessing, feature engineering, and model training using classification algorithms.</li>
+              <li>Achieved high prediction accuracy and visualized key churn indicators for business insight.</li>
+            </ul>
+          </div>
+          
+          <div class="card">
+            <h5>MR Adv – Pakistan Constitutional Chatbot <span style="color: var(--primary-color);">(01/2025 – 02/2025)</span></h5>
+            <ul>
+              <li>Developed an intelligent chatbot that answers queries based on the Constitution of Pakistan using OpenAI's language model.</li>
+              <li>Designed a clean, user-friendly web interface using Flask, enabling real-time chat functionality.</li>
+              <li>Aimed to assist students, citizens, and professionals in understanding constitutional law through interactive legal Q&A.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="section-title">Skills & Technologies</h2>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-item">
+            <div class="skill-name">Mobile Development</div>
+            <div class="skill-description">Flutter, Cross-platform apps, Firebase</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-item">
+            <div class="skill-name">Programming Languages</div>
+            <div class="skill-description">Python, JavaScript, HTML/CSS</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-item">
+            <div class="skill-name">Backend Development</div>
+            <div class="skill-description">Flask, RESTful APIs, Basic Node.js</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-item">
+            <div class="skill-name">Machine Learning</div>
+            <div class="skill-description">Scikit-learn, NumPy, Pandas, Basic ML</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-item">
+            <div class="skill-name">Frontend Development</div>
+            <div class="skill-description">Bootstrap, Responsive design, Basic React</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-item">
+            <div class="skill-name">Databases</div>
+            <div class="skill-description">MongoDB, MySQL, Firebase</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-item">
+            <div class="skill-name">Development Tools</div>
+            <div class="skill-description">Git, GitHub, Postman, VS Code</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-item">
+            <div class="skill-name">Learning & Growth</div>
+            <div class="skill-description">Quick learner, Problem solving, Team work</div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-item">
+            <div class="skill-name">Soft Skills</div>
+            <div class="skill-description">Communication, Time management, Adaptability</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="section">
+    <div class="container">
+      <h2 class="section-title">Certifications</h2>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <h5 style="color: var(--primary-color); margin-bottom: 1.5rem;">Online Courses & Certifications</h5>
+            
+            <div class="certification-item" style="margin-bottom: 2rem; padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px; transition: border-color 0.3s ease;">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <h6 style="color: var(--text-primary); margin-bottom: 0.5rem;">Introduction to Software Engineering</h6>
+                  <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Provider:</strong> IBM (Coursera)</p>
+                  <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Date:</strong> March 2025</p>
+                </div>
+                <a href="https://www.coursera.org/account/accomplishments/verify/T2NRG56SRVDT" target="_blank" class="btn btn-sm" style="background: var(--primary-color); color: var(--bg-color); border: none; font-weight: 500; text-decoration: none; padding: 0.5rem 1rem; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                  <i class="bi bi-eye me-1"></i>View Certificate
+                </a>
+              </div>
+            </div>
+
+            <div class="certification-item" style="margin-bottom: 2rem; padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px; transition: border-color 0.3s ease;">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <h6 style="color: var(--text-primary); margin-bottom: 0.5rem;">Programming for Everybody (Getting Started with Python)</h6>
+                  <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Provider:</strong> University of Michigan (Coursera)</p>
+                  <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Date:</strong> January 2025</p>
+                </div>
+                <a href="https://www.coursera.org/account/accomplishments/records/3X0UY04VLW2M" target="_blank" class="btn btn-sm" style="background: var(--primary-color); color: var(--bg-color); border: none; font-weight: 500; text-decoration: none; padding: 0.5rem 1rem; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                  <i class="bi bi-eye me-1"></i>View Certificate
+                </a>
+              </div>
+            </div>
+
+            <div class="certification-item" style="margin-bottom: 2rem; padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px; transition: border-color 0.3s ease;">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <h6 style="color: var(--text-primary); margin-bottom: 0.5rem;">Introduction to Front-End Development</h6>
+                  <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Provider:</strong> Meta (Coursera)</p>
+                  <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Date:</strong> August 2023</p>
+                </div>
+                <a href="https://www.coursera.org/account/accomplishments/records/JYZEY3FFJLCM" target="_blank" class="btn btn-sm" style="background: var(--primary-color); color: var(--bg-color); border: none; font-weight: 500; text-decoration: none; padding: 0.5rem 1rem; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                  <i class="bi bi-eye me-1"></i>View Certificate
+                </a>
+              </div>
+            </div>
+
+            <div class="certification-item" style="margin-bottom: 2rem; padding: 1.5rem; border: 1px solid var(--border-color); border-radius: 8px; transition: border-color 0.3s ease;">
+              <div class="d-flex justify-content-between align-items-start">
+                <div>
+                  <h6 style="color: var(--text-primary); margin-bottom: 0.5rem;">Amazon Virtual Assistant Course</h6>
+                  <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Provider:</strong> Dera Ismail Khan E-commerce Academy</p>
+                  <p style="color: var(--text-secondary); margin-bottom: 0.5rem;"><strong>Date:</strong> 2024</p>
+                </div>
+                <a href="assets/Amazon.pdf" download class="btn btn-sm" style="background: var(--primary-color); color: var(--bg-color); border: none; font-weight: 500; text-decoration: none; padding: 0.5rem 1rem; border-radius: 4px; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                  <i class="bi bi-download me-1"></i>Download PDF
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership & Societies Section -->
+  <section id="leadership" class="section">
+    <div class="container">
+      <h2 class="section-title">Leadership & Societies</h2>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <h5 style="color: var(--primary-color); margin-bottom: 1rem;">Computer Cell, UET Peshawar</h5>
+            <ul>
+              <li><strong>Member</strong> (Year 1): Contributed to society activities and student support.</li>
+              <li><strong>Logistics Head</strong> (Year 2): Managed logistics for workshops, seminars, and technology expos.</li>
+              <li><strong>Management Head</strong> (Year 3): Led the management team, coordinated events, and supported student volunteers.</li>
+            </ul>
+            <p style="color: var(--text-secondary); margin-bottom: 0;">The Computer Cell is a student-run society dedicated to organizing technology workshops, seminars, and expos, fostering a culture of learning and innovation among students.</p>
+          </div>
+          <div class="card">
+            <h5 style="color: var(--primary-color); margin-bottom: 1rem;">Dera Student Society</h5>
+            <ul>
+              <li><strong>Member</strong> (Year 1): Supported society activities and student welfare.</li>
+              <li><strong>Management Head</strong> (Year 2): Oversaw management operations and event planning.</li>
+              <li><strong>Chief Organizer</strong> (Year 3): Led the organization of major events and initiatives; received a certificate for this role.</li>
+              <li><strong>Advisor to President</strong> (Year 4): Provided guidance and support to the society leadership.</li>
+            </ul>
+            <p style="color: var(--text-secondary); margin-bottom: 0;">Dera Student Society works to support students from Dera Ismail Khan, helping them with university life, academic issues, and organizing community-building events.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="text-center mb-5">
+            <p style="color: var(--text-secondary); font-size: 1.1rem;">I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+          </div>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="bi bi-geo-alt"></i>
+              <span style="color:white;">Dera Ismail Khan, 29211 Pakistan</span>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-telephone"></i>
+              <a href="tel:+923170322545">+92 3170322545</a>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-envelope"></i>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mismailshah496@gmail.com" target="_blank">mismailshah496@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-linkedin"></i>
+              <a href="https://www.linkedin.com/in/ismail-shah-038349242" target="_blank">LinkedIn Profile</a>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-github"></i>
+              <a href="https://github.com/Ismailshah496" target="_blank">GitHub Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume Modal -->
+  <div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content" style="background: var(--card-bg); border: 1px solid var(--border-color);">
+        <div class="modal-header" style="border-bottom: 1px solid var(--border-color);">
+          <h5 class="modal-title" id="resumeModalLabel" style="color: var(--text-primary);">Muhammad Ismail Shah - Resume</h5>
+          <div class="d-flex gap-2">
+            <a href="assets/resume.pdf" download class="btn btn-sm" style="background: var(--primary-color); color: var(--bg-color); border: none; font-weight: 500;">
+              <i class="bi bi-download me-1"></i>Download PDF
+            </a>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="modal-body p-0">
+          <div class="resume-container" style="height: 70vh; overflow: hidden;">
+            <iframe src="assets/resume.pdf" width="100%" height="100%" style="border: none;"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-4" style="border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <p style="color: var(--text-secondary);">© 2025 Muhammad Ismail Shah. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
